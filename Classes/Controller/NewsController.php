@@ -178,6 +178,7 @@ class NewsController extends ActionController {
 
 		// clear page cache after save
 		if (!$newNews->getHidden()) {
+			$this->cacheService->clearPageCache();
 			$this->flushNewsCache($newNews);
 		}
 
